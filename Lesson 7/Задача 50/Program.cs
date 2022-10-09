@@ -45,16 +45,24 @@ void PrintArray(int [,] array)
 int FindElementValueByPosition(int [,] array, int elementPosition)
 {
     int variableWithDesiredNumber = 0;
-    for (int j = 0; j < array.GetLength(0); j++)
+    if (elementPosition > array.GetLength(0) * array.GetLength(1))
     {
-        if (elementPosition > array.GetLength(1) - 1)
+        Console.WriteLine($"Элемента с порядковым номером {elementPosition} нет в данном массиве!");
+        Environment.Exit(0);
+    }
+    else
+    {
+        for (int j = 0; j < array.GetLength(0); j++)
         {
-            elementPosition -= array.GetLength(1);
-        }
-        else
-        {
-            variableWithDesiredNumber = array [j, elementPosition];
-            break;
+            if (elementPosition > array.GetLength(1) - 1)
+            {
+                elementPosition -= array.GetLength(1);
+            }
+            else
+            {
+                variableWithDesiredNumber = array [j, elementPosition];
+                break;
+            }
         }
     }
     return variableWithDesiredNumber;
