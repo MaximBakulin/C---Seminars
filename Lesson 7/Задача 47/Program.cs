@@ -25,7 +25,7 @@ void PrintColorData(string data)
 
 void PrintArray(double [,] array)
 {
-    Console.Write("\t");
+    Console.Write(" \t");
     for (int i = 0; i < array.GetLength(1); i++)
     {
         PrintColorData(i + 1 + " \t");
@@ -33,7 +33,7 @@ void PrintArray(double [,] array)
     Console.WriteLine();
     for (int i = 0; i < array.GetLength(0); i++)
     {
-        PrintColorData(i + 1 + " \t");
+        PrintColorData(i + 1 + "\t");
         for (int j = 0; j < array.GetLength(1); j++)
         {
             Console.Write(array [i, j] + "\t");
