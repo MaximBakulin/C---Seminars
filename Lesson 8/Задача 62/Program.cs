@@ -2,14 +2,14 @@
 int arraySides = ConvertToInt("Введите длину стороны квадратного массива: ");
 int[,] userArray = new int[arraySides, arraySides];
 
-int temp = 1;
+int num = 1;
 int i = 0;
 int j = 0;
 
-while (temp <= userArray.GetLength(0) * userArray.GetLength(1))
+while (num <= userArray.GetLength(0) * userArray.GetLength(1))
 {
-  userArray[i, j] = temp;
-  temp++;
+  userArray[i, j] = num;
+  num++;
   if (i <= j + 1 && i + j < userArray.GetLength(1) - 1)
     j++;
   else if (i < j && i + j >= userArray.GetLength(0) - 1)
